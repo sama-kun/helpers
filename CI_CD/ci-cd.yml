@@ -27,7 +27,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/coditeach-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/u_image_name:latest
 
 
   deploy:
@@ -40,7 +40,7 @@ jobs:
           HOST: ${{ secrets.SERVER_HOST }}
           USERNAME: ${{ secrets.SERVER_USER }}
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/coditeach-backend:latest
+          IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/u_image_name:latest
         run: |
           mkdir -p ~/.ssh
           echo "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
